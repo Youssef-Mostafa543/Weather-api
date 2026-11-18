@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Api Project</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <a href="#" class="logo">
+        <i class="fa fa-cloud"></i>
+        <div>
+          <div class="title">Weather</div>
+          <div class="tagline">Live weather forecast</div>
+        </div>
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">live camera</a></li>
+        <li><a href="#">photos</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="input-container">
+      <div id="input-box">
+        <input
+          type="text"
+          id="city-name"
+          placeholder="leave empty for current city"
+        />
+        <button id="btn-submit-city">Find</button>
+      </div>
+
+      <div id="suggestions-menu"></div>
+    </div>
+
+    <img src="city.jpg" alt="" id="background-image" />
+
+    <div id="results">
+      <div class="day1">
+        <div class="banner">
+          <div class="day-name">—</div>
+          <div class="day-date">—</div>
+        </div>
+        <div class="day1-body">
+          <!--  -->
+          <div id="location">—</div>
+
+          <div class="wrapper">
+            <h1 id="degree">—</h1>
+            <img src="" id="today-icon" alt="" />
+          </div>
+          <div id="condition">—</div>
+
+          <div class="wind">
+            <i class="fa fa-wind"></i>
+            <span id="wind-speed">—</span>
+            <!-- dont forget to add margin -->
+            <i class="fa fa-compass"></i>
+            <span id="wind-direction">—</span>
+          </div>
+
+          <!--  -->
+        </div>
+      </div>
+
+      <div class="day2">
+        <div class="banner">
+          <div class="day-name">—</div>
+          <div class="day-date">—</div>
+        </div>
+
+        <div class="day2-body">
+          <img
+            src="https://cdn.weatherapi.com/weather/64x64/day/140.png"
+            class="icon"
+            alt=""
+          />
+          <div class="max-degree">—</div>
+          <div class="min-degree">—</div>
+          <div class="condition">—</div>
+        </div>
+      </div>
+
+      <div class="day3">
+        <div class="banner">
+          <div class="day-name">—</div>
+          <div class="day-date">—</div>
+        </div>
+
+        <div class="day3-body">
+          <img
+            src="https://cdn.weatherapi.com/weather/64x64/day/140.png"
+            class="icon"
+            alt=""
+          />
+          <div class="max-degree">—</div>
+          <div class="min-degree">—</div>
+          <div class="condition">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End  -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

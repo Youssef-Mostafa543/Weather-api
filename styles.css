@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+/*
+  TODO :  dont forget to run the following command to generate the output.css file and watch for changes:
+  npx @tailwindcss/cli -i ./styles.css -o ./src/output.css --watch
+*/
+:root {
+  /* You can use Hex, HSL, RGB, or named colors */
+  --bg: #1d1f2b;
+  --dark: #242a36;
+  --light: #303644;
+  --blue: #0190dc;
+  --temp: teal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+body {
+  background-color: var(--bg);
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+
+/*     code     */
+
+#navbar {
+  width: 80vw;
+  height: 15%;
+  margin: 2vw 10vw;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* border: red 1px solid; */
+
+  /* -- -- -- -- -- -- */
+  .logo {
+    display: flex;
+    i {
+      color: var(--blue);
+      font-size: 4em;
+      margin: 0 2vh;
+    }
+  }
+  /* -- -- -- -- -- -- */
+  ul {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    li > a {
+      border: solid 1px transparent;
+      border-radius: 100vh;
+      padding: 0.5em 1em;
+      transition: all 0.3s ease;
+    }
+    li > a:hover {
+      color: var(--blue);
+      border: solid 1px var(--blue);
+    }
+    li > a:focus {
+      color: var(--blue);
+      border: solid 3px var(--blue);
+    }
+  }
+}
+
+.input-container {
+  #input-box {
+    width: 80vw;
+    height: 7vh;
+    margin: 10vw 10vw 0 10vw;
+
+    display: flex;
+    align-items: center;
+
+    /* border: red solid 2px; */
+    border-radius: 100vh;
+    overflow: hidden;
+    background-color: var(--bg);
+
+    #city-name {
+      width: 89.5%;
+      height: 100%;
+      padding-left: 1%;
+      /* border-radius: 100vh; */
+      /* border appears here idk why*/
+      outline: none;
+    }
+    #btn-submit-city {
+      background-color: var(--blue);
+      width: 10%;
+      height: 85%;
+      border-radius: 100vh;
+    }
+    #btn-submit-city:hover {
+      background-color: color-mix(in srgb, var(--blue), #000 30%);
+    }
+  }
+
+  #suggestions-menu {
+    background-color: var(--light);
+    width: 60vw;
+    /* height: ;  leave it dynamic*/
+
+    margin: 0vw 20vw 10vw 20vw;
+
+    overflow: hidden;
+    .suggestion-button {
+      width: 100%;
+      padding: 1vw;
+      color: white;
+      display: block;
+      border-top: solid 0.2vw black;
+    }
+
+    .suggestion-button:hover {
+      background-color: var(--dark);
+      cursor: pointer;
+      color: var(--blue);
+    }
+  }
+}
+#background-image {
+  position: fixed;
+  top: 15vh;
+  left: 0;
+
+  z-index: -1;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+
+  object-position: center 0%;
+}
+
+.wind span {
+  margin: 0.5vw;
+  color: lightgray;
+}
+#results {
+  display: flex;
+
+  width: 80%;
+  background-color: white;
+  min-height: 50vh;
+  margin: 0 10%;
+  border-radius: 1vh;
+  overflow: hidden;
+
+  .day1,
+  .day2,
+  .day3 {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+  }
+  .day1,
+  .day3 {
+    background-color: var(--light);
+  }
+  .day2 {
+    background-color: var(--dark);
+  }
+
+  .banner {
+    padding: 0.2vw 0.8vw;
+    display: flex;
+    color: lightgray;
+    justify-content: space-between;
+    background-color: color-mix(in srgb, transparent, #000 30%);
+  }
+
+  .day1-body {
+    padding: 8%;
+    width: 100%;
+    flex: 1;
+
+    #location {
+      color: lightgray;
+      font-size: 1.5rem;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10% 0;
+      #degree {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      #today-icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    #condition {
+      color: var(--blue);
+    }
+  }
+  .day2-body,
+  .day3-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    padding: 10% 0;
+    flex-direction: column;
+
+    .icon {
+      width: 4rem;
+      height: 4rem;
+      margin: 2rem 0;
+    }
+
+    .min-degree {
+      font-size: 1rem;
+      color: lightgray;
+    }
+    .max-degree {
+      font-size: 3rem;
+      color: white;
+    }
+    .condition {
+      color: var(--blue);
+    }
+  }
+}
+
+/* AI ADDED : */
+/* ===== phones: one card per row ===== */
+@media (max-width: 600px) {
+  #results {
+    /* match the navbar / search box so the edges line up */
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  #results .day1,
+  #results .day2,
+  #results .day3 {
+    width: 100%;
+  }
+}
