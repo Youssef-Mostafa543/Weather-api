@@ -2,6 +2,10 @@
 
 A responsive web app that shows a **3-day weather forecast** for any city. It auto-detects the user's location on load, lets you search for a city, and offers live autocomplete suggestions. The background image changes dynamically based on the current weather condition.
 
+## 🌐 Live Project
+
+Check out the live version of the app here: **[Weather API — Live Demo](https://youssef-mostafa543.github.io/Weather-api/)**
+
 ## 🎬 Video Preview
 
 [![Video Preview](https://img.shields.io/badge/▶%20Watch%20Demo-Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1Mc9RFordztHfgipULExUrI-OcLrDFII6/view)
